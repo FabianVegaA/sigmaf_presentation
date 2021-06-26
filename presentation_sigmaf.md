@@ -168,16 +168,16 @@ printLn("Hello, World");
 <style scoped>
 img{
   margin-left: 5%;
-  width: 5%;
+  width: 4%;
 }
 img[src*="twitter"]{
   margin-left: 0%;
 }
 img[src*="github"]{
-  width: 6%;
+  width: 5%;
 }
 </style>
-### Contactame
+### Contáctame
 ![](untils/icons8-twitter-48.png) [Twitter](https://twitter.com/fabianmativeal)  ![](untils/icons8-linkedin-48.png) [LinkedIn](https://www.linkedin.com/in/fabi%C3%A1n-vega-alcota/)![](untils/icons8-github-48.png) [GitHub]() 
 
 ---
