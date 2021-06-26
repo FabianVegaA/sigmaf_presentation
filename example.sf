@@ -1,0 +1,109 @@
+
+
+let _snone_ = fn s::str -> str {=> s;} -- This does nothing
+
+let to_float = fn i::int -> float {=> parse(i, "float");}
+
+let tail = fn l::list -> list {=> l[1,length(l)];}
+
+let take = fn l::list, i::int -> list {=> l[0,i];}
+
+let rtake = fn l::list, i::int -> list {=> l[i,length(l)];}
+
+let sfoldl = fn f::function, s::str, l::list -> str {
+        if length(l) == 1 then {
+                => s + f(l[0]);
+        }
+        => sfoldl(f, s + f(l[0]), tail(l));
+}
+
+let irank = fn i::int, f::int -> list {
+	if i + 1  == f then {=> [i];}
+	=> [i] + irank(i+1, f);
+}
+
+let sconcat = fn l::list -> str {
+	=> sfoldl(_snone_, "", l);
+}
+
+let srepeat = fn s::str, n::int -> list {
+	if n <= 0 then {=> [];}
+	if n == 1 then {=> [s];}
+	=> [s] + srepeat(s, n-1);
+}
+
+let map = fn f::function, l::list -> list {
+	if (l==[]) then {=> [];}
+	
+	=> [f(l[0])] + map(f, tail(l));
+}
+
+-- Prints
+
+let stairs = fn s::str, i::int -> str {
+	if i == 1 then {
+		=> s + "\n";
+	}
+	=> stairs(s, i-1) + sconcat(srepeat(s, i)) + "\n";
+}
+
+let inv_stairs = fn s::str, i::int -> str {
+	if i == 1 then {
+		=> s + "\n";
+	}
+	=> sconcat(srepeat(s, i)) + "\n" + inv_stairs(s, i-1);
+}
+
+let triangle = fn s1::str, s2::str, i::int, j::int -> str {
+	if i == 1 then {
+		=> s1 + sconcat(srepeat(s2, j*2 + 1))  + s1 + "\n";
+	}
+	=> sconcat(srepeat(s1, i)) 
+        + sconcat(srepeat(s2, if j > 0 then {j*2 + 1} else {j+1})) 
+        + sconcat(srepeat(s1, i)) 
+        + "\n" 
+        + triangle(s1, s2, i-1, j+1);
+}
+
+-- Sub list
+
+/*
+    La función debe sacar el 20%
+    a los primeros n datos 
+    de la lista y empezar a 
+    sacar la mitad del % a los 
+    siguientes n elementos 
+    hasta recorrerla toda
+*/
+
+let create_batchs = fn n::int, l::list -> list {
+    if length(l) <= n then { => [l];}
+    => [take(l, n)] + create_batchs(n, rtake(l, n));
+}
+
+let generated_percentages = fn init::float, size_l::int -> list {
+    if size_l <= 0 then {=> [];}
+    => [init] + generated_percentages(init * 0.5, size_l - 1);
+}  
+
+let list_by_percertange = fn l::list, p::float -> list {
+        if l == [] then {=> [];}
+        => [to_float(l[0]) * p] + list_by_percertange(tail(l), p);
+}
+
+let lists_by_percertanges = fn ls::list, ps::list -> list {
+    if ls == [] then {=> [];}
+    => [list_by_percertange(ls[0], ps[0])] 
+        + lists_by_percertanges(tail(ls), tail(ps));
+}
+
+let main = fn _size::int, _n::int, _init_percentage::float -> list {
+    
+    let batch_list = create_batchs(_n, irank(0, _size));
+    printLn(batch_list);
+    let percentages = generated_percentages(_init_percentage, length(batch_list));
+    printLn(map(fn p::float -> float {=> 100.0 * p;}, percentages));
+    
+    => lists_by_percertanges(batch_list, percentages);
+}
+
