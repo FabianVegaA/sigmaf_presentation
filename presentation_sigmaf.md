@@ -201,7 +201,16 @@ img[src*="sigma"]:hover {
   width: 60%;
   margin-left: 16%;
 }
+p{
+  color: transparent;
+  transition: 1s;
+}
+p:hover{
+  color:purple;
+}
+
 </style>
 ![](untils/sigma%20original%20reescaled%20png.png)
 # ¡Hagamos grandes cosas!
 
+Enchulado por Camilú
