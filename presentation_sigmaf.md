@@ -143,7 +143,7 @@ img:hover{
 En el repositorio de SigmaF encontrarán un tutorial para instalarlo vía ejecutable en Linux y también lo puedes clonar el repositorio y usarlo ejecutando con:
 
 ``` shell
-$ python3.8 main.py -ncover
+$ python3.8 main.py --ncover
 ```
 
 Y listo, ya puedes hacer tu primer _"Hello, World"_ con SigmaF.
@@ -154,6 +154,25 @@ printLn("Hello, World");
 
 ---
 
+# Novedades
+
+- Operador Composición
+- Tipos Algebraicos
+- Cambios en el return statement
+- Nueva pagina Web
+
+
+---
+
+# Futuro de SigmaF
+
+- De Interprete a compilador dinámico
+- Autodocumentación
+- Pattern Matching
+- Concurrencia y Paralelismo
+- Lenguaje flexible para desarrollo de Metaheuristicas 
+
+---
 
 
 
@@ -163,6 +182,8 @@ printLn("Hello, World");
 - [Qué es la programación funcional](https://www.linkedin.com/pulse/qu%C3%A9-es-la-programaci%C3%B3n-funcional-fabi%C3%A1n-vega-alcota/)
 
 - [SigmaF Repositorio](https://github.com/FabianVegaA/sigmaF)
+
+- [Pagina Web](https://camilu-png.github.io/LearnSigmaF/)
 
 
 <style scoped>
