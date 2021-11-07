@@ -91,6 +91,20 @@ Un lenguaje de programación de Paradigma Funcional y open-source.
 
 ---
 
+<style scoped>
+h3 {
+  margin-top: 6%;  
+}
+img {
+  top: 15%;
+  width: 30%;
+  position: absolute;
+  left: 60%;
+}
+</style>
+
+![](untils/perfil%20sigmaf%201.png)
+
 ### Lineamentos del lenguaje
 
 - Escalabilidad
@@ -143,7 +157,7 @@ img:hover{
 En el repositorio de SigmaF encontrarán un tutorial para instalarlo vía ejecutable en Linux y también lo puedes clonar el repositorio y usarlo ejecutando con:
 
 ``` shell
-$ python3.8 main.py -ncover
+$ python3.8 main.py --ncover
 ```
 
 Y listo, ya puedes hacer tu primer _"Hello, World"_ con SigmaF.
@@ -154,8 +168,25 @@ printLn("Hello, World");
 
 ---
 
+# Novedades
+
+- Operador Composición
+- Tipos Algebraicos
+- Cambios en el return statement
+- Nueva pagina Web
 
 
+---
+
+# Futuro de SigmaF
+
+- De Interprete a compilador dinámico
+- Autodocumentación
+- Pattern Matching
+- Concurrencia y Paralelismo
+- Lenguaje flexible para desarrollo de Metaheuristicas 
+
+---
 
 # Recursos
 - [SigmaF el nuevo lenguaje de programación](https://www.linkedin.com/pulse/sigmaf-el-nuevo-lenguaje-de-programaci%C3%B3n-fabi%C3%A1n-vega-alcota/)
@@ -164,11 +195,14 @@ printLn("Hello, World");
 
 - [SigmaF Repositorio](https://github.com/FabianVegaA/sigmaF)
 
+- [Pagina Web](https://camilu-png.github.io/LearnSigmaF/)
+
+---
 
 <style scoped>
 img{
   margin-left: 5%;
-  width: 5%;
+  width: 4%;
 }
 img[src*="twitter"]{
   margin-left: 0%;
@@ -176,16 +210,25 @@ img[src*="twitter"]{
 img[src*="github"]{
   width: 6%;
 }
+img[src*="original"]{
+  width: 100%;
+  margin: auto;
+}
 </style>
-### Contactame
+
+### Contáctame
+
+![](untils/twitter%20original.png)
+
 ![](untils/icons8-twitter-48.png) [Twitter](https://twitter.com/fabianmativeal)  ![](untils/icons8-linkedin-48.png) [LinkedIn](https://www.linkedin.com/in/fabi%C3%A1n-vega-alcota/)![](untils/icons8-github-48.png) [GitHub]() 
 
 ---
 
 <style scoped>
 img[src*="sigma"] {
-  width: 50%;
-  margin-left: 20%;
+  width: 80%;
+  margin-top: -10%;
+  margin-left: 5%;
   transition:1s;
   position: fixed;
 }
@@ -198,10 +241,19 @@ h1 {
   margin-top: 25%;
 }
 img[src*="sigma"]:hover {
-  width: 60%;
+  width: 80%;
   margin-left: 16%;
 }
+p{
+  color: transparent;
+  transition: 1s;
+}
+p:hover{
+  color:purple;
+}
+
 </style>
-![](untils/sigma%20original%20reescaled%20png.png)
+![](untils/sigmaf.svg)
 # ¡Hagamos grandes cosas!
 
+Enchulado por Camilú
